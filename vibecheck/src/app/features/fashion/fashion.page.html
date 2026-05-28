@@ -1,0 +1,66 @@
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="content-wrapper">
+    <!-- Occasion Category Slider -->
+    <section class="category-slider">
+      <div class="horizontal-scroll hide-scrollbar">
+        <button *ngFor="let cat of categories" 
+                [class.active]="selectedCategory === cat"
+                (click)="selectCategory(cat)"
+                class="category-chip">
+          {{ cat }}
+        </button>
+      </div>
+    </section>
+
+    <!-- Occasion Feed -->
+    <section class="vibe-feed">
+      <div style="overflow-y: auto; height: 120px;">
+      <div *ngFor="let item of feedItems" class="vibe-card group">
+        <img [src]="item.image" class="card-bg" [alt]="item.title">
+        
+        <div class="card-overlay">
+          <div class="content-bottom">
+            <h2 class="headline-md text-white">{{ item.title }}</h2>
+            
+            <div class="tag-row">
+              <span *ngFor="let tag of item.tags" class="glass-tag">{{ tag }}</span>
+            </div>
+
+            <div class="curator-row">
+              <div class="curator-info">
+                <div class="avatar">
+                  <img [src]="item.curatorImage" alt="Curator">
+                </div>
+                <span class="label-sm text-white">Curated by {{ item.curator }}</span>
+              </div>
+
+              <div class="card-actions">
+                <button class="action-btn blur-btn">
+                  <ion-icon name="share-social"></ion-icon>
+                </button>
+                <button class="action-btn primary-btn" (click)="toggleLike(item)">
+                  <ion-icon [name]="item.liked ? 'heart' : 'heart-outline'"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating Action Button -->
+  <!-- <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button color="primary" class="vibe-fab">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+</ion-content>

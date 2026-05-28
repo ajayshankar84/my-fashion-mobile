@@ -1,0 +1,40 @@
+<ion-tabs (ionTabsDidChange)="setCurrentTab($event)">
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="background">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title class="logo-vibe">VIBECHECK</ion-title>
+      <ion-buttons slot="end">
+        <ion-button color="primary"><ion-icon name="notifications"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- The router outlet is where dynamic content (Fashion, Home, etc.) will render -->
+  <ion-router-outlet></ion-router-outlet>
+
+  <ion-tab-bar slot="bottom" class="vibe-tab-bar">   
+
+    <ion-tab-button tab="fashion">
+      <ion-icon [name]="selectedTab === 'fashion' ? 'shirt' : 'shirt-outline'"></ion-icon>
+      <ion-label>Fashion</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="discover">
+      <ion-icon [name]="selectedTab === 'discover' ? 'heart' : 'heart-outline'"></ion-icon>
+      <ion-label>Discover</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chat">
+      <ion-icon [name]="selectedTab === 'chat' ? 'chatbubble-ellipses' : 'chatbubble-ellipses-outline'"></ion-icon>
+      <ion-label>Chat</ion-label>
+      <ion-badge color="danger" *ngIf="unreadMessages > 0">{{ unreadMessages }}</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon [name]="selectedTab === 'profile' ? 'person-circle' : 'person-circle-outline'"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

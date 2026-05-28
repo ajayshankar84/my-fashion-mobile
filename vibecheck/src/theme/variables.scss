@@ -1,0 +1,113 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+:root {
+  /** Primary (Electric Rose) **/
+  --ion-color-primary: #ba0036;
+  --ion-color-primary-rgb: 186, 0, 54;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #a40030;
+  --ion-color-primary-tint: #c11a4a;
+
+  /** Secondary (Cyber Cyan) **/
+  --ion-color-secondary: #006875;
+  --ion-color-secondary-rgb: 0, 104, 117;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #005c67;
+  --ion-color-secondary-tint: #1a7783;
+
+  /** Tertiary (Hyper Violet) **/
+  --ion-color-tertiary: #7000ff;
+  --ion-color-tertiary-rgb: 112, 0, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #6300e0;
+  --ion-color-tertiary-tint: #7e1aff;
+
+  /** Shared Component Properties **/
+  --ion-border-radius: 24px;
+  --ion-font-family: 'Plus Jakarta Sans', sans-serif;
+  --vibe-font-heading: 'Syne', sans-serif;
+  --vibe-elevation: 0px 10px 30px rgba(0, 0, 0, 0.08);
+
+  /** Light Mode Colors (VibeCheck Surface) **/
+  --ion-background-color: #fcf8f9;
+  --ion-background-color-rgb: 252, 248, 249;
+
+  --ion-text-color: #1c1b1c;
+  --ion-text-color-rgb: 28, 27, 28;
+
+  --ion-color-step-50: #f6f3f4;
+  --ion-color-step-100: #f0edee;
+  --ion-color-step-150: #ebe7e8;
+  --ion-color-step-200: #e5e2e3;
+  --ion-color-step-250: #dfdcdd;
+  --ion-color-step-300: #d9d6d7;
+  --ion-color-step-350: #d3d1d2;
+  --ion-color-step-400: #cdcbcc;
+  --ion-color-step-450: #c7c6c7;
+  --ion-color-step-500: #c1c0c1;
+  --ion-color-step-550: #bbbabb;
+  --ion-color-step-600: #b5b4b5;
+  --ion-color-step-650: #afafaf;
+  --ion-color-step-700: #a9a9a9;
+  --ion-color-step-750: #a3a3a3;
+  --ion-color-step-800: #9d9d9d;
+  --ion-color-step-850: #979797;
+  --ion-color-step-900: #919191;
+  --ion-color-step-950: #8b8b8b;
+}
+
+/** Dark Mode Implementation **/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ion-background-color: #1c1b1c;
+    --ion-background-color-rgb: 28, 27, 28;
+
+    --ion-text-color: #f3f0f1;
+    --ion-text-color-rgb: 243, 240, 241;
+
+    --ion-color-step-50: #262526;
+    --ion-color-step-100: #313031;
+    --ion-color-step-150: #3c3b3c;
+    --ion-color-step-200: #464547;
+    --ion-color-step-250: #515052;
+    --ion-color-step-300: #5c5c5d;
+    --ion-color-step-350: #666768;
+    --ion-color-step-400: #717273;
+    --ion-color-step-450: #7c7c7e;
+    --ion-color-step-500: #878789;
+    --ion-color-step-550: #919294;
+    --ion-color-step-600: #9c9d9f;
+    --ion-color-step-650: #a7a8aa;
+    --ion-color-step-700: #b1b3b5;
+    --ion-color-step-750: #bcbebf;
+    --ion-color-step-800: #c7c8ca;
+    --ion-color-step-850: #d1d3d5;
+    --ion-color-step-900: #dcdee0;
+    --ion-color-step-950: #e7e9eb;
+  }
+}
+
+/* Typography Application */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--vibe-font-heading);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: capitalize;
+}
+
+body {
+  font-family: var(--ion-font-family);
+  font-weight: 500;
+}
+
+ion-item {
+  --border-radius: var(--ion-border-radius);
+  --padding-start: 16px;
+  margin-bottom: 8px;
+}

@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <main class="flex-container">
+    <!-- Left Side: Immersive Visual (Optional/Placeholder for split layout) -->
+    <section class="visual-pane ion-hide-lg-down">
+      <div class="visual-content">
+        <div class="branding">
+          <span class="logo-vibe">VIBE</span>
+        </div>
+        <div class="visual-footer">
+          <h1 class="headline-xl">Elevate your daily flow.</h1>
+          <p class="body-md">Join the most energetic community of trend-setters.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Side: Login Form Canvas -->
+    <section class="form-pane vibe-gradient">
+      <div class="form-card">
+        <!-- Branding Mobile Only -->
+        <div class="mobile-branding ion-hide-lg-up">
+          <span class="logo-vibe">VIBE</span>
+        </div>
+
+        <div class="header-group">
+          <h2 class="headline-lg">Welcome back</h2>
+          <p class="body-md secondary">Check your vibe and stay connected.</p>
+        </div>
+
+        <form (ngSubmit)="handleLogin()" class="vibe-form">
+          <div class="input-group">
+            <label class="label-lg">Email address</label>
+            <div class="input-wrapper group">
+              <ion-icon name="at-outline" class="input-icon"></ion-icon>
+              <input type="email" placeholder="name@vibe.com" [(ngModel)]="loginData.email" name="email" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="flex-header">
+              <label class="label-lg">Password</label>
+              <a class="forgot-link">Forgot?</a>
+            </div>
+            <div class="input-wrapper group">
+              <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+              <input type="password" placeholder="••••••••" [(ngModel)]="loginData.password" name="password" required />
+              <button type="button" class="visibility-toggle">
+                <ion-icon name="eye-outline"></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <div class="remember-row">
+            <ion-checkbox labelPlacement="end" mode="md">Keep me logged in</ion-checkbox>
+          </div>
+
+          <button class="btn-primary btn-bouncy" type="submit">
+            Enter VIBE
+          </button>
+        </form>   
+
+        <p class="footer-text">
+          Don't have an account? 
+          <a class="highlight" routerLink="/auth/create-account">Create a Vibe</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</ion-content>

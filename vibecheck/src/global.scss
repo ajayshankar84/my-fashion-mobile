@@ -1,0 +1,122 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+@import '@ionic/angular/css/palettes/dark.system.css';
+
+/**
+ * Design System Tokens
+ * -----------------------------------------------------
+ * Map the values from DESIGN.md to these variables.
+ */
+:root {
+  /* Typography */
+  --app-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --app-heading-font-family: 'Inter', system-ui, sans-serif;
+
+  /* 
+   * Brand Colors - From DESIGN.md
+   */
+  --ion-color-primary: #7e3af2;
+  --ion-color-primary-rgb: 126,58,242;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #6f33d5;
+  --ion-color-primary-tint: #8b4ef3;
+
+  --ion-color-secondary: #0694a2;
+  --ion-color-secondary-rgb: 6,148,162;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #05828f;
+  --ion-color-secondary-tint: #1f9fad;
+
+  /* Tertiary (Mapped from Accent/Trend in DESIGN.md) */
+  --ion-color-tertiary: #ff5a1f;
+  --ion-color-tertiary-rgb: 255,90,31;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-shade: #e04f1b;
+  --ion-color-tertiary-tint: #ff6b35;
+
+  /* Success - Vibrant Green */
+  --ion-color-success: #22c55e;
+  --ion-color-success-rgb: 34,197,94;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255,255,255;
+  --ion-color-success-shade: #1ead52;
+  --ion-color-success-tint: #38cb6e;
+
+  /* Warning - Clean Amber */
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245,158,11;
+  --ion-color-warning-contrast: #ffffff;
+  --ion-color-warning-contrast-rgb: 255,255,255;
+  --ion-color-warning-shade: #d88b0a;
+  --ion-color-warning-tint: #f6a823;
+
+  /* Danger - Fashion Red */
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239,68,68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #d23c3c;
+  --ion-color-danger-tint: #f15757;
+
+  /* Spacing Scale (8pt Grid System) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+
+  /* Border Radius */
+  --app-border-radius: 12px;
+  
+  /* Ionic component overrides */
+  --ion-border-radius: var(--app-border-radius);
+}
+
+/* Apply Global Typography */
+body {
+  font-family: var(--app-font-family);
+  background-color: var(--ion-background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--app-heading-font-family);
+  font-weight: 700;
+}

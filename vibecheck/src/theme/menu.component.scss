@@ -1,0 +1,23 @@
+ion-content {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 24px;
+}
+
+ion-list {
+  background: transparent;
+}
+
+ion-item {
+  --background: var(--ion-color-step-100);
+  --color: var(--ion-text-color);
+  --border-radius: 9999px; /* Pill shape per DESIGN.md */
+  margin-bottom: 12px;
+  font-weight: 600;
+  
+  &.logout-item {
+    --background: var(--ion-color-primary);
+    --color: var(--ion-color-primary-contrast);
+    margin-top: 40px;
+  }
+}

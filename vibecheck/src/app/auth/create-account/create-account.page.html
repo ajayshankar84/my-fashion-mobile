@@ -1,0 +1,122 @@
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <main class="flex-container">
+    <!-- Left Side: Immersive Visual -->
+    <section class="visual-pane ion-hide-lg-down">
+      <div class="visual-content">
+        <div class="branding">
+          <span class="logo-vibe">VIBE</span>
+        </div>
+        <div class="visual-footer">
+          <h1 class="headline-xl">Join the vibe check.</h1>
+          <p class="body-md">Start your journey with the community of digital fashionistas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right Side: Registration Form Canvas -->
+    <section class="form-pane vibe-gradient">
+      <div class="form-card">
+        <!-- Branding Mobile Only -->
+        <div class="mobile-branding ion-hide-lg-up">
+          <span class="logo-vibe">VIBE</span>
+        </div>
+
+        <!-- Step 1: Basics -->
+        <div class="step-container" *ngIf="currentStep === 1">
+          
+          <h2 class="headline-lg">Create Account</h2>
+          <p class="body-md secondary">Let's get to know you better.</p>
+          
+          <div class="vibe-form">
+            <div class="input-group">
+              <label class="label-lg">WHAT'S YOUR NAME?</label>
+              <div class="input-wrapper">
+                <ion-icon name="person-outline" class="input-icon"></ion-icon>
+                <input type="text" placeholder="Alex Vibe" [(ngModel)]="registerData.name" name="regName">
+              </div>
+            </div>
+            <div class="input-group">
+              <label class="label-lg">EMAIL ADDRESS</label>
+              <div class="input-wrapper">
+                <ion-icon name="at-outline" class="input-icon"></ion-icon>
+                <input type="email" placeholder="alex@vibecheck.app" [(ngModel)]="registerData.email" name="regEmail">
+              </div>
+            </div>
+            <div class="input-group">
+              <label class="label-lg">MOBILE NUMBER</label>
+              <div class="input-wrapper">
+                <ion-icon name="call-outline" class="input-icon"></ion-icon>
+                <input type="tel" placeholder="+1 (555) 000-0000" [(ngModel)]="registerData.mobile" name="regMobile">
+              </div>
+            </div>
+            <div class="input-group">
+              <label class="label-lg">PASSWORD</label>
+              <div class="input-wrapper">
+                <ion-icon name="call-outline" class="input-icon"></ion-icon>
+                <input type="password" placeholder="" [(ngModel)]="registerData.password" name="regMobile">
+              </div>
+            </div>
+            <button class="btn-primary" (click)="nextStep(2)">Continue</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Style DNA -->
+        <div class="step-container" *ngIf="currentStep === 2">
+          <span class="step-indicator">Step 02 / 03</span>
+          <h2 class="headline-lg">Your Style DNA</h2>
+          <p class="body-md secondary">Pick a vibe that resonates with you.</p>
+
+          <div class="style-grid">
+            <div class="style-chip" [class.active]="registerData.style === 'STREETWEAR'" (click)="selectStyle('STREETWEAR')">
+              <ion-icon name="shirt-outline"></ion-icon>
+              <span>STREETWEAR</span>
+            </div>
+            <div class="style-chip" [class.active]="registerData.style === 'LUXURY'" (click)="selectStyle('LUXURY')">
+              <ion-icon name="diamond-outline"></ion-icon>
+              <span>LUXURY</span>
+            </div>
+            <div class="style-chip" [class.active]="registerData.style === 'VINTAGE'" (click)="selectStyle('VINTAGE')">
+              <ion-icon name="infinite-outline"></ion-icon>
+              <span>VINTAGE</span>
+            </div>
+            <div class="style-chip" [class.active]="registerData.style === 'AVANT-GARDE'" (click)="selectStyle('AVANT-GARDE')">
+              <ion-icon name="color-palette-outline"></ion-icon>
+              <span>AVANT-GARDE</span>
+            </div>
+          </div>
+          <div class="button-row">
+            <button class="btn-outline" (click)="nextStep(1)">Back</button>
+            <button class="btn-primary" (click)="nextStep(3)">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Security -->
+        <div class="step-container" *ngIf="currentStep === 3">
+          <span class="step-indicator">Step 03 / 03</span>
+          <h2 class="headline-lg">Secure the Vibe</h2>
+          <p class="body-md secondary">Create a password to protect your style.</p>
+
+          <div class="vibe-form">
+            <div class="input-group">
+              <label class="label-lg">PASSWORD</label>
+              <div class="input-wrapper">
+                <ion-icon name="lock-closed-outline" class="input-icon"></ion-icon>
+                <input type="password" placeholder="••••••••" [(ngModel)]="registerData.password" name="regPass">
+              </div>
+            </div>
+            <div class="info-box">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+              <p>We prioritize your data privacy and fashion secrets.</p>
+            </div>
+            <button class="btn-primary" (click)="handleJoin()">Join VibeCheck</button>
+          </div>
+        </div>
+
+        <p class="footer-text">
+          Already have an account? 
+          <a class="highlight" routerLink="/auth/login">Log In</a>
+        </p>
+      </div>
+    </section>
+  </main>
+</ion-content>

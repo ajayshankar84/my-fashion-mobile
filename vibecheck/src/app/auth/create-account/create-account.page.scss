@@ -1,0 +1,107 @@
+@import '../login/login.page.scss';
+
+/* Layout refinements for standalone page */
+.flex-container {
+  display: flex;
+  min-height: 100vh;
+  background: var(--ion-background-color);
+}
+
+.visual-pane {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.step-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Specific registration flow overrides/additions */
+.style-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.style-chip {
+  padding: 24px 16px;
+  border-radius: 20px;
+  background: var(--ion-color-step-50);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  ion-icon { 
+    font-size: 24px;
+    color: var(--ion-color-step-500);
+  }
+  
+  span { 
+    font-size: 11px; 
+    font-weight: 700; 
+    letter-spacing: 0.05em; 
+    color: var(--ion-color-step-600);
+  }
+
+  &.active {
+    background: white;
+    border-color: var(--ion-color-secondary);
+    box-shadow: 0 10px 20px rgba(0, 104, 117, 0.1);
+    
+    ion-icon, span {
+      color: var(--ion-color-secondary);
+    }
+  }
+  
+  &:hover:not(.active) {
+    background: var(--ion-color-step-100);
+  }
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+
+  .btn-outline {
+    flex: 1;
+    padding: 16px;
+    background: transparent;
+    border: 2px solid var(--ion-color-step-200);
+    border-radius: 9999px;
+    font-weight: 700;
+    color: var(--ion-text-color);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: var(--ion-color-step-50);
+    }
+  }
+  
+  .btn-primary { 
+    flex: 2; 
+  }
+}
+
+.info-box {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  background: rgba(0, 104, 117, 0.05);
+  border-radius: 16px;
+  margin: 24px 0;
+  ion-icon { color: var(--ion-color-secondary); font-size: 20px; }
+  p { margin: 0; font-size: 13px; color: var(--ion-color-step-700); line-height: 1.4; }
+}
