@@ -6,6 +6,16 @@
   text-align: center;
 }
 
+ion-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+ion-router-outlet {
+  display: contents;
+}
+
 ion-tab-bar {
   /* Floating Island Design */
   --background: var(--ion-background-color);

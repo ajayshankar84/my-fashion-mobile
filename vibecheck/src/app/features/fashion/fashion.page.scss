@@ -3,6 +3,10 @@
   padding-bottom: 120px;
 }
 
+ion-content {
+  --overflow: auto;
+}
+
 /* Category Slider */
 .category-slider {
   margin: 0 -20px 24px -20px;
